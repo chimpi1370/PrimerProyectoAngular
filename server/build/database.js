@@ -14,8 +14,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const promise_mysql_1 = __importDefault(require("promise-mysql"));
 const keys_1 = __importDefault(require("./keys"));
+// donde podria encontrar información de estos metodos y propiedades
 const pool = promise_mysql_1.default.createPool(keys_1.default.database);
-pool.getConnection()
+pool.getConnection() //TODO tengo dudas con el metodo getConnection, me arroja error.
     .then((connection) => __awaiter(void 0, void 0, void 0, function* () {
     (yield pool).releaseConnection(connection);
     console.log('DB is connected');
